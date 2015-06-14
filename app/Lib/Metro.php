@@ -76,7 +76,7 @@ class Metro{
 		    //get a tag value
 		    $atagValue = trim($link->nodeValue);
 		    $atagValue = trim(substr($atagValue, 0, strrpos($atagValue, 'Lyrics')));
-		    $href = $this->shortenURL($href);
+		    $href = $this->shortenAlbumUrl($href);
 		    $data[] = array('char' => $char,'link' => $href , 'name' => $atagValue);
 		}
 		return $data;
@@ -131,25 +131,37 @@ class Metro{
 	    
 	    $albums = array();
 	    $tracklists = array();
+	    $featured = false;
 	    foreach($res as $key => $result){
 	    	$tracklist = array();    
 	        $album = $result->getElementsByTagName('h3');//get albums
 	        $songs = $result->getElementsByTagName('li');
 	        $links = $result->getElementsByTagName('a');
+
 	        foreach ($album  as $ab) {
+	        	if(strtolower($ab->nodeValue) == strtolower('Songs Featured In')){
+	        		$featured = true;
+	        		continue;
+	        	}
 		    	$albums[] = $ab->nodeValue;	
 		    }
-
+		    
 	        foreach ($songs as $k => $song) {
 	        	$link = $links[$k+1]->getAttribute('href');
-	        	$tracklist[] = array('link' =>$link, 'name' => trim($song->nodeValue));
+	        	$tracklist[] = array('link' => $this->shortenLyricsUrl($link), 'name' => trim($song->nodeValue), 'link_ref'=>$link);
 	        }
-	        if($tracklist)
-	       		$tracklists[]=$tracklist;
+	        //if($tracklist)
+	       	$tracklists[]=$tracklist;
+	        
+	        
 	    }
 	    if(count($albums) > count($tracklists)){
 	    	end($albums);
 	    	unset($albums[key($albums)]);
+	    }
+	    else if(count($albums) < count($tracklists)){
+	    	end($tracklists);
+	    	unset($tracklists[key($tracklists)]);
 	    }
 	    return array('albums' => $albums, 'tracklists'=> $tracklists);
 	}
@@ -163,25 +175,95 @@ class Metro{
 		return explode("\n", $n);
 	}
 
-	function get_lyrics($page){
+	function get_lyrics($url){
+		$page = $this->getPage($url);
 		$data = array();
-		preg_match_all ("/<div id=\"lyrics-body-text\">([^`]*?)<\/div>/", $page, $out);
-		if(isset($out[1][0]))
+		//preg_match_all("/<div id=\"lyrics-body-text\">([^`]*?)<\/div>/", $page, $out);
+
+		$doc = phpQuery::newDocument($page);
+		$lyrics = trim(pq('div#lyrics-body-text')->html());
+		$meta =trim(pq('p.writers')->html());
+		if($meta){
+			$meta = explode('<strong>', $meta);
+		}
+		if(@$lyrics)
 		{
-			$data['lyrics'] = $out[1][0];
-			preg_match_all("/<p class=\"writers\">([^`]*?)<\/p>/", $page, $meta);
+			if($lyrics == '<p class="verse"></p>') $lyrics = NULL;
+			$data['lyrics'] = $lyrics;
+			//preg_match_all("/<p class=\"writers\">([^`]*?)<\/p>/", $page, $meta);
 			
-			$data['writer'] = strip_tags(substr($meta[0][0], 52));
-			$data['publisher'] = substr(strip_tags(substr($meta[0][1], 53)), 8);
+			if(isset($meta[1])){
+				$data['writer'] = strip_tags(str_replace(WRITER,'',$meta[1]));
+			}
+			else{
+				$data['writer'] = '';
+			}
+			if(isset($meta[2])){
+				$data['publisher'] = trim(substr(strip_tags(str_replace(PUBLISHER,'',$meta[2])), strlen(LYRICS)+1));
+			}
+			else
+			{
+				$data['publisher'] ='';
+			}
 			return $data;
 		}
 		return FALSE;
 	}
-	function shortenURL($url){
+	function shortenAlbumUrl($url){
 		if(!$url) return false;
 		$url = substr($url, strlen(ML));
 		$url = substr($url, 0, strlen($url)-strlen(MS.LYRICS.DOT.PAGE_SUFFIX));
 		return $url;
+	}
+	function shortenLyricsUrl($url){
+		if(!$url) return false;
+		$url = substr($url, strlen(ML));
+		
+		$url = substr($url, 0, strlen($url)-(strlen(DOT.PAGE_SUFFIX)));
+		return $url;
+	}
+
+	// function get_featured_list($artist_link){
+	// 	$url = ML.$artist_link.MS.FEAT.DOT.PAGE_SUFFIX;
+	// 	$html = $this->getPage($url);
+	// 	$doc = phpQuery::newDocument($html);
+	// 	$tracks = array();
+	// 	foreach (pq('table.songs-table a') as $a) {
+	// 		$href = pq($a)->attr('href').'<br>';
+	// 		$name = 
+	// 	}exit;
+	// }
+
+	function get_albums_and_tracks2($page){
+		$page = $this->getPage($page);
+		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
+
+		// $xml = new DOMDocument();
+	 //    @$xml->loadHTML($page); // path of your XML file ,make sure path is correct
+	 //    $xpd = new DOMXPath($xml);
+	 //    false&&$result_data = new DOMElement(); //this is for my IDE to have intellysense
+	 //    $res = $xpd->query("//div[@class='switchable albums clearfix']/*");  // change the table naem here
+	    $doc = phpQuery::newDocument($page);
+	    //$res = pq('div.swit li a');
+	    $albums = array();
+	    foreach (pq('div.switchable.albums h3') as $album) {
+	    	$an = trim(strip_tags(pq($album)->html()));
+			if(strtolower($an) != 'songs featured in'){
+				$albums[] = pq($album)->html();
+			}
+		}
+		foreach (pq('div.switchable.albums li a:lastChild') as $a){
+			 $hr=pq($a)->attr('href');
+			 echo $hr.'<br>';
+		}
+		exit;
+	    // $albums = array();
+	    // $tracklists = array();
+	   
+	    // foreach($res as $key => $result){
+	    
+	    // }
+	    return array('albums' => $albums, 'tracklists'=> $tracklists);
 	}
 }
 

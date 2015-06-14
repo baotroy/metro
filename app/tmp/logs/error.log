@@ -338,3 +338,524 @@ Stack Trace:
 #3 E:\ws\fur\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
 #4 E:\ws\fur\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2015-06-14 14:55:07 Error: Fatal Error (4): syntax error, unexpected '.', expecting '(' in [E:\ws\metro\app\Controller\IndexController.php, line 20]
+2015-06-14 14:55:07 Error: [FatalErrorException] syntax error, unexpected '.', expecting '('
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 20, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 20, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 14:56:53 Error: Fatal Error (4): syntax error, unexpected ';', expecting '(' in [E:\ws\metro\app\Controller\IndexController.php, line 20]
+2015-06-14 14:56:53 Error: [FatalErrorException] syntax error, unexpected ';', expecting '('
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 20, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 20, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 15:37:34 Error: Fatal Error (1): Call to a member function getAttribute() on null in [E:\ws\metro\app\Lib\Metro.php, line 142]
+2015-06-14 15:37:34 Error: [FatalErrorException] Call to a member function getAttribute() on null
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 142)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 142, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 142, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 15:39:50 Error: Fatal Error (4): syntax error, unexpected '{' in [E:\ws\metro\app\Lib\Metro.php, line 155]
+2015-06-14 15:39:50 Error: [FatalErrorException] syntax error, unexpected '{'
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 155)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 155, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 155, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 16:03:16 Error: Fatal Error (64): Cannot redeclare class AlbumModel in [E:\ws\metro\app\Model\Album.php, line 8]
+2015-06-14 16:03:16 Error: [FatalErrorException] Cannot redeclare class AlbumModel
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'E:\\ws\\metro\\app...', 8)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'E:\\ws\\metro\\app...', 8, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'E:\\ws\\metro\\app...', 8, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 16:08:48 Error: Fatal Error (4): syntax error, unexpected ';', expecting '(' in [E:\ws\metro\app\Controller\IndexController.php, line 43]
+2015-06-14 16:08:48 Error: [FatalErrorException] syntax error, unexpected ';', expecting '('
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 43, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 43, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 16:56:07 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [E:\ws\metro\app\Lib\Metro.php, line 6]
+2015-06-14 16:56:07 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 17:01:23 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [E:\ws\metro\app\Lib\Metro.php, line 6]
+2015-06-14 17:01:23 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 17:08:56 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [E:\ws\metro\app\Lib\Metro.php, line 6]
+2015-06-14 17:08:56 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 17:14:05 Error: [MissingActionException] Action IndexController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'IndexController',
+  'action' => 'img',
+)
+Request URL: /metro/index/img/spindicate.gif
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#2 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-14 17:14:05 Error: [MissingActionException] Action IndexController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'IndexController',
+  'action' => 'img',
+)
+Request URL: /metro/index/img/spindicate.gif
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#2 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-14 17:14:59 Error: [MissingActionException] Action IndexController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'IndexController',
+  'action' => 'img',
+)
+Request URL: /metro/index/img/spindicate.gif
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#2 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-14 17:17:20 Error: Fatal Error (4): syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$' in [E:\ws\metro\app\Lib\Metro.php, line 176]
+2015-06-14 17:17:20 Error: [FatalErrorException] syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$'
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 17:19:10 Error: Fatal Error (4): syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$' in [E:\ws\metro\app\Lib\Metro.php, line 176]
+2015-06-14 17:19:10 Error: [FatalErrorException] syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$'
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 17:22:36 Error: Fatal Error (4): syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$' in [E:\ws\metro\app\Lib\Metro.php, line 176]
+2015-06-14 17:22:36 Error: [FatalErrorException] syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$'
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 176, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 17:42:48 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [E:\ws\metro\app\Lib\Metro.php, line 6]
+2015-06-14 17:42:48 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'E:\\ws\\metro\\app...', 6, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 18:21:43 Error: Fatal Error (4): syntax error, unexpected 'list' (T_LIST), expecting identifier (T_STRING) in [E:\ws\metro\app\Controller\IndexController.php, line 67]
+2015-06-14 18:21:43 Error: [FatalErrorException] syntax error, unexpected 'list' (T_LIST), expecting identifier (T_STRING)
+Request URL: /metro/index/list
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 67, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 67, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 18:21:58 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'getAll' at line 1
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('getAll', Array)
+#2 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(668): DboSource->execute('getAll', Array, Array)
+#3 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(611): DboSource->fetchAll('getAll', Array, Array)
+#4 E:\ws\metro\lib\Cake\Model\Model.php(827): DboSource->query('getAll', Array, Object(AppModel))
+#5 E:\ws\metro\app\Controller\IndexController.php(68): Model->__call('getAll', Array)
+#6 E:\ws\metro\app\Controller\IndexController.php(68): AppModel->getAll()
+#7 [internal function]: IndexController->lists()
+#8 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#9 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#11 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-14 18:23:29 Error: Fatal Error (4): syntax error, unexpected ';' in [E:\ws\metro\app\Model\Lyrics.php, line 29]
+2015-06-14 18:23:29 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 29, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 29, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 18:28:19 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Artist.name' in 'field list'
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Album`....', Array)
+#2 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(668): DboSource->execute('SELECT `Album`....', Array, Array)
+#3 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Album`....', false)
+#4 E:\ws\metro\lib\Cake\Model\Model.php(3022): DboSource->read(Object(Album), Array)
+#5 E:\ws\metro\lib\Cake\Model\Model.php(2994): Model->_readDataSource('all', Array)
+#6 E:\ws\metro\app\Model\Album.php(20): Model->find('all', Array)
+#7 E:\ws\metro\app\Controller\IndexController.php(68): Album->getAll()
+#8 [internal function]: IndexController->lists()
+#9 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#10 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#12 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-06-14 18:38:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Lyrics.year' in 'field list'
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Lyrics`...', Array)
+#2 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(668): DboSource->execute('SELECT `Lyrics`...', Array, Array)
+#3 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Lyrics`...', false)
+#4 E:\ws\metro\lib\Cake\Model\Model.php(3022): DboSource->read(Object(Lyrics), Array)
+#5 E:\ws\metro\lib\Cake\Model\Model.php(2994): Model->_readDataSource('all', Array)
+#6 E:\ws\metro\app\Model\Lyrics.php(11): Model->find('all', Array)
+#7 E:\ws\metro\app\Controller\IndexController.php(74): Lyrics->getByAlbum('1')
+#8 [internal function]: IndexController->lists()
+#9 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#10 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#12 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-06-14 18:49:23 Error: [MissingViewException] View file "Index\lists.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Index\\lists.ctp',
+)
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 E:\ws\metro\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#4 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-06-14 18:49:55 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55779328 bytes) in [E:\ws\metro\app\View\Layouts\default.ctp, line 47]
+2015-06-14 18:49:55 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55779328 bytes)
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 18:50:26 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55779328 bytes) in [E:\ws\metro\app\View\Layouts\default.ctp, line 47]
+2015-06-14 18:50:26 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55779328 bytes)
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 18:50:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Artist.2' in 'field list'
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Artist`...', Array)
+#2 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(668): DboSource->execute('SELECT `Artist`...', Array, Array)
+#3 E:\ws\metro\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Artist`...', false)
+#4 E:\ws\metro\lib\Cake\Model\Model.php(3022): DboSource->read(Object(Artist), Array)
+#5 E:\ws\metro\lib\Cake\Model\Model.php(2994): Model->_readDataSource('list', Array)
+#6 E:\ws\metro\app\Model\Artist.php(10): Model->find('list', Array)
+#7 E:\ws\metro\app\Controller\IndexController.php(68): Artist->getAll('list', 2)
+#8 [internal function]: IndexController->lists()
+#9 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#10 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#12 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-06-14 18:51:47 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55357440 bytes) in [E:\ws\metro\app\View\Layouts\default.ctp, line 47]
+2015-06-14 18:51:47 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55357440 bytes)
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 18:54:07 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 51732480 bytes) in [E:\ws\metro\app\View\Layouts\default.ctp, line 47]
+2015-06-14 18:54:07 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 51732480 bytes)
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 18:55:46 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 51748864 bytes) in [E:\ws\metro\app\View\Layouts\default.ctp, line 47]
+2015-06-14 18:55:46 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 51748864 bytes)
+Request URL: /metro/index/lists
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'E:\\ws\\metro\\app...', 47, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 19:01:46 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR) in [E:\ws\metro\app\Controller\IndexController.php, line 27]
+2015-06-14 19:01:46 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 27, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 27, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 19:05:21 Error: [MissingActionException] Action IndexController::list() could not be found.
+Exception Attributes: array (
+  'controller' => 'IndexController',
+  'action' => 'list',
+)
+Request URL: /metro/index/list
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#2 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-14 19:25:19 Error: [Exception] Method 'attribute' doesnt exist
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\app\Lib\Metro.php(231): phpQueryObject->__call('attribute', Array)
+#1 E:\ws\metro\app\Lib\Metro.php(231): phpQueryObject->attribute('href')
+#2 E:\ws\metro\app\Controller\IndexController.php(26): Metro->get_featured_list('linkin-park')
+#3 [internal function]: IndexController->test()
+#4 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#5 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#7 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-06-14 19:26:21 Error: [Exception] Method 'attributes' doesnt exist
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\app\Lib\Metro.php(231): phpQueryObject->__call('attributes', Array)
+#1 E:\ws\metro\app\Lib\Metro.php(231): phpQueryObject->attributes('href')
+#2 E:\ws\metro\app\Controller\IndexController.php(26): Metro->get_featured_list('linkin-park')
+#3 [internal function]: IndexController->test()
+#4 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#5 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#7 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-06-14 19:30:31 Error: Fatal Error (1): Function name must be a string in [E:\ws\metro\app\Lib\Metro.php, line 231]
+2015-06-14 19:30:31 Error: [FatalErrorException] Function name must be a string
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Function name m...', 'E:\\ws\\metro\\app...', 231)
+#1 [internal function]: ErrorHandler::handleError(1, 'Function name m...', 'E:\\ws\\metro\\app...', 231, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Function name m...', 'E:\\ws\\metro\\app...', 231, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:03:15 Error: Fatal Error (4): syntax error, unexpected 'continue' (T_CONTINUE) in [E:\ws\metro\app\Lib\Metro.php, line 151]
+2015-06-14 20:03:15 Error: [FatalErrorException] syntax error, unexpected 'continue' (T_CONTINUE)
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 151)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 151, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 151, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:09:51 Error: Fatal Error (1): Call to a member function getAttribute() on null in [E:\ws\metro\app\Lib\Metro.php, line 151]
+2015-06-14 20:09:51 Error: [FatalErrorException] Call to a member function getAttribute() on null
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 151)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 151, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 151, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:14:20 Error: Fatal Error (1): Call to a member function getAttribute() on null in [E:\ws\metro\app\Lib\Metro.php, line 152]
+2015-06-14 20:14:20 Error: [FatalErrorException] Call to a member function getAttribute() on null
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 152)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 152, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 152, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:25:05 Error: Fatal Error (1): Call to undefined method DOMElement::html() in [E:\ws\metro\app\Lib\Metro.php, line 249]
+2015-06-14 20:25:05 Error: [FatalErrorException] Call to undefined method DOMElement::html()
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 249)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 249, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 249, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:25:27 Error: Fatal Error (4): syntax error, unexpected '$a' (T_VARIABLE), expecting ',' or ';' in [E:\ws\metro\app\Lib\Metro.php, line 249]
+2015-06-14 20:25:27 Error: [FatalErrorException] syntax error, unexpected '$a' (T_VARIABLE), expecting ',' or ';'
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 249)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 249, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\metro\\app...', 249, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:39:18 Error: Fatal Error (1): Call to a member function count() on null in [E:\ws\metro\app\Lib\Metro.php, line 256]
+2015-06-14 20:39:18 Error: [FatalErrorException] Call to a member function count() on null
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 256)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 256, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 256, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:39:30 Error: Fatal Error (1): Call to a member function length() on null in [E:\ws\metro\app\Lib\Metro.php, line 256]
+2015-06-14 20:39:30 Error: [FatalErrorException] Call to a member function length() on null
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 256)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 256, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\\ws\\metro\\app...', 256, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:39:44 Error: [Exception] Method 'childNodes' doesnt exist
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\app\Lib\Metro.php(256): phpQueryObject->__call('childNodes', Array)
+#1 E:\ws\metro\app\Lib\Metro.php(256): phpQueryObject->childNodes('a')
+#2 E:\ws\metro\app\Controller\IndexController.php(31): Metro->get_albums_and_tracks2('http://www.metr...')
+#3 [internal function]: IndexController->test()
+#4 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#5 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#7 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-06-14 20:40:28 Error: Fatal Error (1): Call to undefined method DOMElement::childNodes() in [E:\ws\metro\app\Lib\Metro.php, line 256]
+2015-06-14 20:40:28 Error: [FatalErrorException] Call to undefined method DOMElement::childNodes()
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:41:57 Error: Fatal Error (1): Call to undefined method DOMElement::childNodes() in [E:\ws\metro\app\Lib\Metro.php, line 256]
+2015-06-14 20:41:57 Error: [FatalErrorException] Call to undefined method DOMElement::childNodes()
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:42:25 Error: Fatal Error (1): Call to undefined method DOMElement::childNodes() in [E:\ws\metro\app\Lib\Metro.php, line 256]
+2015-06-14 20:42:25 Error: [FatalErrorException] Call to undefined method DOMElement::childNodes()
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:43:37 Error: Fatal Error (1): Call to undefined method DOMText::html() in [E:\ws\metro\app\Lib\Metro.php, line 259]
+2015-06-14 20:43:37 Error: [FatalErrorException] Call to undefined method DOMText::html()
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 259)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 259, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 259, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:43:46 Error: Fatal Error (1): Call to undefined method DOMText::text() in [E:\ws\metro\app\Lib\Metro.php, line 259]
+2015-06-14 20:43:46 Error: [FatalErrorException] Call to undefined method DOMText::text()
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 259)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 259, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 259, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:47:40 Error: Fatal Error (1): Call to undefined method DOMElement::attr() in [E:\ws\metro\app\Lib\Metro.php, line 256]
+2015-06-14 20:47:40 Error: [FatalErrorException] Call to undefined method DOMElement::attr()
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#2 E:\ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\metro\\app...', 256, Array)
+#3 E:\ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 20:50:02 Error: [Exception] Method 'atrr' doesnt exist
+Request URL: /metro/index/test
+Stack Trace:
+#0 E:\ws\metro\app\Lib\Metro.php(256): phpQueryObject->__call('atrr', Array)
+#1 E:\ws\metro\app\Lib\Metro.php(256): phpQueryObject->atrr('href')
+#2 E:\ws\metro\app\Controller\IndexController.php(31): Metro->get_albums_and_tracks2('http://www.metr...')
+#3 [internal function]: IndexController->test()
+#4 E:\ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#5 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#7 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}

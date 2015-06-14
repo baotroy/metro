@@ -5,11 +5,24 @@ App::uses('Metro', 'Lib');
 class IndexController extends AppController {
 	public $uses = array('Artist', 'Album', 'Lyric');
 	function index(){
-		exit();
+
 		$this->get_artists();
-		echo 'done...';
 		exit;
 	}
+
+	/*
+		http://www.metrolyrics.com/a1-albums-list.html
+		ML.artistname.MS.
+	*/
+	function test(){
+		$metro = new Metro;
+		$url = 'http://www.metrolyrics.com/aaaaa-aaaaaa-albums-list.html';
+		$html  = $metro->getPage($url);
+		$r = $metro->get_albums_and_tracks($html);
+		echo '<meta charset="utf-8">';
+		echo '<pre>';print_r($r); exit;
+	}
+
 	function get_artists() {
 		set_time_limit(0);
 		foreach (Constant::$CHARS as $char) {

@@ -1,6 +1,7 @@
 <?php 
 require_once('phpQuery.php');
 class Metro{
+
 	function getPage($url){
 		return file_get_contents($url);
 	}
@@ -58,6 +59,7 @@ class Metro{
 	//get artist list from single html file
 	function getArtistListFromSingleAplpha($page, $char){
 		//get tbody tag html
+		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
 		$tbody = $this->getElement($page, 'tbody');
 		$tbody = $tbody[0][0];
 
@@ -74,6 +76,7 @@ class Metro{
 		    //get a tag value
 		    $atagValue = trim($link->nodeValue);
 		    $atagValue = trim(substr($atagValue, 0, strrpos($atagValue, 'Lyrics')));
+		    $href = $this->shortenURL($href);
 		    $data[] = array('char' => $char,'link' => $href , 'name' => $atagValue);
 		}
 		return $data;
@@ -91,8 +94,35 @@ class Metro{
 		if($val > $roundzero) return $roundzero+1;
 		return $roundzero;
 	}
-	//lay danh sach album va traack list trong album
+
+	//lay danh sach bai hat k theo album
+	function get_tracks_by_artist($page){
+		//get tbody tag html
+		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
+		$tbody = $this->getElement($page, 'tbody');
+		$tbody = $tbody[0][0];
+
+		$dom = new DOMDocument;
+		//load html text to DOM
+		@$dom->loadHTML($tbody);
+		//GET ALL A tag
+		$data = array();
+		$links = $dom->getElementsByTagName('a');
+		foreach ($links as $link){
+		    //Extract and show the "href" attribute. 
+		    //get href
+		    $href = $link->getAttribute('href');
+		    //get a tag value
+		    $atagValue = trim($link->nodeValue);
+		    $atagValue = trim(substr($atagValue, 0, strrpos($atagValue, 'Lyrics')));
+		    $data[] = array('link' => $href , 'name' => $atagValue);
+		}
+		return $data;
+	}
+
+	//lay danh sach album va track list trong album
 	function get_albums_and_tracks($page){
+		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
 		$xml = new DOMDocument();
 	    @$xml->loadHTML($page); // path of your XML file ,make sure path is correct
 	    $xpd = new DOMXPath($xml);
@@ -147,7 +177,12 @@ class Metro{
 		}
 		return FALSE;
 	}
-
+	function shortenURL($url){
+		if(!$url) return false;
+		$url = substr($url, strlen(ML));
+		$url = substr($url, 0, strlen($url)-strlen(MS.LYRICS.DOT.PAGE_SUFFIX));
+		return $url;
+	}
 }
 
  ?>

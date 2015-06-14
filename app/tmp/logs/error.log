@@ -1,0 +1,340 @@
+2015-06-14 05:37:12 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR) in [E:\ws\fur\metro\app\Controller\PagesController.php, line 10]
+2015-06-14 05:37:12 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 10, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 10, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 05:37:30 Error: Fatal Error (1): Class 'Metro' not found in [E:\ws\fur\metro\app\Controller\PagesController.php, line 10]
+2015-06-14 05:37:30 Error: [FatalErrorException] Class 'Metro' not found
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'Metro' n...', 'E:\\ws\\fur\\metro...', 10)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Metro' n...', 'E:\\ws\\fur\\metro...', 10, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'Metro' n...', 'E:\\ws\\fur\\metro...', 10, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 05:54:53 Error: Fatal Error (4): syntax error, unexpected '$', expecting variable (T_VARIABLE) in [E:\ws\fur\metro\app\Lib\Metro.php, line 96]
+2015-06-14 05:54:53 Error: [FatalErrorException] syntax error, unexpected '$', expecting variable (T_VARIABLE)
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 96)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 96, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 96, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 05:55:15 Error: Fatal Error (1): Call to undefined function getElementRex() in [E:\ws\fur\metro\app\Lib\Metro.php, line 87]
+2015-06-14 05:55:15 Error: [FatalErrorException] Call to undefined function getElementRex()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 87, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 87, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 05:58:51 Error: Fatal Error (1): Call to undefined function getArtistListFromSingleHTML() in [E:\ws\fur\metro\app\Lib\Metro.php, line 57]
+2015-06-14 05:58:51 Error: [FatalErrorException] Call to undefined function getArtistListFromSingleHTML()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 57)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 57, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 57, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 05:59:31 Error: Fatal Error (1): Call to undefined method Metro::getElement() in [E:\ws\fur\metro\app\Lib\Metro.php, line 65]
+2015-06-14 05:59:31 Error: [FatalErrorException] Call to undefined method Metro::getElement()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 65)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 65, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 65, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:01:36 Error: Fatal Error (1): Call to undefined function getPage() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 10]
+2015-06-14 06:01:36 Error: [FatalErrorException] Call to undefined function getPage()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:02:11 Error: Fatal Error (1): Call to undefined function getPage() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 10]
+2015-06-14 06:02:11 Error: [FatalErrorException] Call to undefined function getPage()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:02:46 Error: Fatal Error (1): Call to undefined function getPage() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 10]
+2015-06-14 06:02:46 Error: [FatalErrorException] Call to undefined function getPage()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:04:18 Error: Fatal Error (1): Call to undefined function getArtistListFromSingleHTML() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 82]
+2015-06-14 06:04:18 Error: [FatalErrorException] Call to undefined function getArtistListFromSingleHTML()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 82, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 82, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:04:38 Error: Fatal Error (1): Call to undefined function getElement() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 90]
+2015-06-14 06:04:38 Error: [FatalErrorException] Call to undefined function getElement()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 90)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 90, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 90, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:04:57 Error: Fatal Error (1): Call to undefined method PagesController::getElement() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 90]
+2015-06-14 06:04:57 Error: [FatalErrorException] Call to undefined method PagesController::getElement()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 90)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 90, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 90, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:07:53 Error: Fatal Error (1): Class 'Metro' not found in [E:\ws\fur\metro\app\Controller\PagesController.php, line 22]
+2015-06-14 06:07:53 Error: [FatalErrorException] Class 'Metro' not found
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'Metro' n...', 'E:\\ws\\fur\\metro...', 22)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Metro' n...', 'E:\\ws\\fur\\metro...', 22, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'Metro' n...', 'E:\\ws\\fur\\metro...', 22, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:13:34 Error: Fatal Error (1): Call to undefined function getElementRex() in [E:\ws\fur\metro\app\Lib\Metro.php, line 83]
+2015-06-14 06:13:34 Error: [FatalErrorException] Call to undefined function getElementRex()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 83)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 83, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 83, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:19:43 Error: Fatal Error (64): Can't use function return value in write context in [E:\ws\fur\metro\app\Lib\Metro.php, line 118]
+2015-06-14 06:19:43 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 118)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 118, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 118, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:21:33 Error: Fatal Error (64): Can't use function return value in write context in [E:\ws\fur\metro\app\Lib\Metro.php, line 118]
+2015-06-14 06:21:33 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 118)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 118, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 118, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:22:48 Error: Fatal Error (64): Can't use function return value in write context in [E:\ws\fur\metro\app\Lib\Metro.php, line 119]
+2015-06-14 06:22:48 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 119)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 119, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', 'E:\\ws\\fur\\metro...', 119, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:34:00 Error: Fatal Error (1): Call to undefined method PagesController::getTotalListOfArtistAlpha() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 28]
+2015-06-14 06:34:00 Error: [FatalErrorException] Call to undefined method PagesController::getTotalListOfArtistAlpha()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 28, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 28, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:38:33 Error: Fatal Error (64): Cannot redeclare PagesController::$uses in [E:\ws\fur\metro\app\Controller\PagesController.php, line 7]
+2015-06-14 06:38:33 Error: [FatalErrorException] Cannot redeclare PagesController::$uses
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 7)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 7, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 7, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:38:43 Error: Fatal Error (64): Cannot redeclare class ArtistModel in [E:\ws\fur\metro\app\Model\Artist.php, line 8]
+2015-06-14 06:38:43 Error: [FatalErrorException] Cannot redeclare class ArtistModel
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 8)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 8, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 8, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:39:33 Error: Fatal Error (64): Cannot redeclare class ArtistModel in [E:\ws\fur\metro\app\Model\Artist.php, line 9]
+2015-06-14 06:39:33 Error: [FatalErrorException] Cannot redeclare class ArtistModel
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 9)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 9, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 9, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 06:40:30 Error: [MissingTableException] Table banners for model Artist was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'banners',
+  'class' => 'Artist',
+  'ds' => 'default',
+)
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Model\Model.php(3644): Model->setSource('banners')
+#1 E:\ws\fur\metro\lib\Cake\Model\Model.php(1387): Model->getDataSource()
+#2 E:\ws\fur\metro\lib\Cake\Model\Model.php(1253): Model->schema()
+#3 E:\ws\fur\metro\lib\Cake\Model\Model.php(1212): Model->_setAliasData(Array)
+#4 E:\ws\fur\metro\lib\Cake\Model\ModelValidator.php(214): Model->set(Array)
+#5 E:\ws\fur\metro\lib\Cake\Model\Model.php(2399): ModelValidator->validateMany(Array, Array)
+#6 E:\ws\fur\metro\lib\Cake\Model\Model.php(2316): Model->validateMany(Array, Array)
+#7 E:\ws\fur\metro\app\Controller\PagesController.php(28): Model->saveMany(Array)
+#8 [internal function]: PagesController->display('home')
+#9 E:\ws\fur\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#10 E:\ws\fur\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 E:\ws\fur\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#12 E:\ws\fur\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-06-14 06:50:03 Error: Fatal Error (4): syntax error, unexpected '<', expecting variable (T_VARIABLE) or '$' in [E:\ws\fur\metro\app\Controller\PagesController.php, line 8]
+2015-06-14 06:50:03 Error: [FatalErrorException] syntax error, unexpected '<', expecting variable (T_VARIABLE) or '$'
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 8, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\ws\\fur\\metro...', 8, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 08:41:04 Error: Fatal Error (1): Call to undefined function getNumOfPage() in [E:\ws\fur\metro\app\Controller\PagesController.php, line 10]
+2015-06-14 08:41:04 Error: [FatalErrorException] Call to undefined function getNumOfPage()
+Request URL: /metro/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 10, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 09:10:52 Error: [MissingControllerException] Controller class TestController could not be found.
+Exception Attributes: array (
+  'class' => 'TestController',
+  'plugin' => NULL,
+)
+Request URL: /metro/test
+Stack Trace:
+#0 E:\ws\fur\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-14 09:18:19 Error: [MissingControllerException] Controller class TestController could not be found.
+Exception Attributes: array (
+  'class' => 'TestController',
+  'plugin' => NULL,
+)
+Request URL: /metro/test
+Stack Trace:
+#0 E:\ws\fur\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-14 09:23:03 Error: [MissingControllerException] Controller class TestController could not be found.
+Exception Attributes: array (
+  'class' => 'TestController',
+  'plugin' => NULL,
+)
+Request URL: /metro/test
+Stack Trace:
+#0 E:\ws\fur\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-14 09:23:04 Error: [MissingControllerException] Controller class TestController could not be found.
+Exception Attributes: array (
+  'class' => 'TestController',
+  'plugin' => NULL,
+)
+Request URL: /metro/test
+Stack Trace:
+#0 E:\ws\fur\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-14 09:24:52 Error: Fatal Error (64): Cannot redeclare IndexController::test() in [E:\ws\fur\metro\app\Controller\IndexController.php, line 16]
+2015-06-14 09:24:52 Error: [FatalErrorException] Cannot redeclare IndexController::test()
+Request URL: /metro/index
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 16)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 16, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 16, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 09:25:03 Error: Fatal Error (64): Cannot redeclare IndexController::test() in [E:\ws\fur\metro\app\Controller\IndexController.php, line 16]
+2015-06-14 09:25:03 Error: [FatalErrorException] Cannot redeclare IndexController::test()
+Request URL: /metro/index/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 16)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 16, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'E:\\ws\\fur\\metro...', 16, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 09:28:08 Error: Fatal Error (1): Call to undefined method IndexController::getNumOfPage() in [E:\ws\fur\metro\app\Controller\IndexController.php, line 9]
+2015-06-14 09:28:08 Error: [FatalErrorException] Call to undefined method IndexController::getNumOfPage()
+Request URL: /metro/index/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 9, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\\ws\\fur\\metro...', 9, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 10:07:27 Error: Fatal Error (1): [] operator not supported for strings in [E:\ws\fur\metro\app\Lib\Metro.php, line 79]
+2015-06-14 10:07:27 Error: [FatalErrorException] [] operator not supported for strings
+Request URL: /metro/index/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, '[] operator not...', 'E:\\ws\\fur\\metro...', 79)
+#1 [internal function]: ErrorHandler::handleError(1, '[] operator not...', 'E:\\ws\\fur\\metro...', 79, Array)
+#2 E:\ws\fur\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, '[] operator not...', 'E:\\ws\\fur\\metro...', 79, Array)
+#3 E:\ws\fur\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-14 10:21:14 Error: [MissingViewException] View file "Index\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Index\\index.ctp',
+)
+Request URL: /metro/index/
+Stack Trace:
+#0 E:\ws\fur\metro\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 E:\ws\fur\metro\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 E:\ws\fur\metro\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 E:\ws\fur\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#4 E:\ws\fur\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

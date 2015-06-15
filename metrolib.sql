@@ -21,6 +21,10 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `name` varchar(150) DEFAULT NULL,
   `artist` int(11) DEFAULT NULL,
   `year` varchar(4) DEFAULT NULL,
+  `num_of_tracks` int(11) DEFAULT NULL,
+  `genre` varchar(20) DEFAULT NULL,
+  `image` varchar(20) DEFAULT NULL,
+  `image_ref` varchar(100) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `deleted` tinyint(4) DEFAULT '0',
@@ -37,6 +41,26 @@ CREATE TABLE IF NOT EXISTS `artists` (
   `link` varchar(100) NOT NULL,
   `name` varchar(150) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
+  `modified` datetime NOT NULL,
+  `deleted` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+
+
+-- Dumping structure for table metrolib.featured
+CREATE TABLE IF NOT EXISTS `featured` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `link` varchar(100) DEFAULT NULL,
+  `album` int(11) DEFAULT NULL,
+  `artist` int(11) DEFAULT NULL,
+  `featured` int(11) DEFAULT NULL,
+  `name` varchar(150) DEFAULT NULL,
+  `content` text,
+  `writer` tinytext,
+  `publisher` tinytext,
+  `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)

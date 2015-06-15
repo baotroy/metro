@@ -10,10 +10,11 @@ class IndexController extends AppController {
 	}
 	function index(){
 
-//		$this->get_artists();
-
-		$arts[13198] = 'evanescence';
-		$this->get_album_tracks_lyrics($arts);
+		$saved = $this->get_artists();
+		echo '<meta charset="utf-8">';
+		echo '<pre>';print_r($saved); exit;
+		// $arts[13198] = 'evanescence';
+		// $this->get_album_tracks_lyrics($arts);
 		exit;
 	}
 
@@ -105,10 +106,13 @@ class IndexController extends AppController {
 	}
 	function get_artists() {
 		set_time_limit(0);
-		//foreach (Constant::$CHARS as $char) {
-			$arts = $this->__get_artists_by_char(1);
+		$count = 0;
+		foreach (Constant::$CHARS as $char) {
+			$arts = $this->__get_artists_by_char($char);
 			$this->Artist->saveMany($arts);	
-		//}
+			$count += count($arts);
+		}
+		return $count;
 	}
 
 	function __get_artists_by_char($char){

@@ -9,20 +9,32 @@ class IndexController extends AppController {
 		set_time_limit(0);
 	}
 	function index(){
-		$metro = new Metro;
-		$r =$metro->get_artist_banner('maroon-5');
-		echo $r;
+		$count = $this->update_artists();
+		echo $count;
 	}
 
 	/*
 		http://www.metrolyrics.com/a1-albums-list.html
 		ML.artistname.MS.
 	*/
-	function get_banner($url)//url artist album list
-	{
-		$metro = new Metro;
-		$html  = $metro->getPage($url);
 
+	function get_banner($link)
+	{
+		$ignore = array('1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '7.jpg', '8.jpg', '6.jpg', '9.jpg', '10.jpg');
+		$count = 0;
+		$metro = new Metro;
+		//foreach ($artist_list as $art_id => $link) {
+			$link_ref = $metro->get_artist_banner($link);
+			$img = $this->Common->get_image_file_name($link_ref);
+			if(!in_array($img, $ignore)){
+				if(@copy($link_ref, DL_PATH.DIR_PROFILE.$img)){
+					$this->Artist->save(array('id' => $art_id, 'cover' => $img));
+					return true;
+				}
+			}
+			
+	//	}
+		return false;;
 	}
 
 	function get_cover($files = array()){
@@ -108,6 +120,34 @@ class IndexController extends AppController {
 		}
 		return array('saved_tracks' => $saved_tracks, 'saved_albums' => $saved_albums);
 	}
+	
+	function get_artists() {
+		$count = 0;
+		foreach (Constant::$CHARS as $char) {
+			$arts = $this->__get_artists_by_char($char);
+			$this->Artist->saveMany($arts);	
+			$count += count($arts);
+		}
+		return $count;
+	}
+
+	function update_artists() {
+		$count = 0;
+		foreach (Constant::$CHARS as $char) {
+			$arts = $this->__get_artists_by_char($char);
+			
+			foreach ($arts as $key => $art) {
+				if(!$this->Artist->is_exist($art['link'])){
+					$this->Artist->create();
+					$this->Artist->save($art);
+					$this->get_banner($art['link']);
+					$count++;	
+				}
+			}
+		}
+		return $count;
+	}
+
 	function lists(){
 		$arts = $this->Artist->getAll('list', array('name'), 1);
 		$albums = array();
@@ -121,16 +161,6 @@ class IndexController extends AppController {
 		$this->set('arts', $arts);
 		$this->set('albums', $albums);
 		$this->set('tracks', $tracks);
-	}
-	function get_artists() {
-		set_time_limit(0);
-		$count = 0;
-		foreach (Constant::$CHARS as $char) {
-			$arts = $this->__get_artists_by_char($char);
-			$this->Artist->saveMany($arts);	
-			$count += count($arts);
-		}
-		return $count;
 	}
 
 	function __get_artists_by_char($char){

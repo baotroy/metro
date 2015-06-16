@@ -281,7 +281,11 @@ class Metro{
 
 		$doc = phpQuery::newDocument($page);
 
-		return pq('#bg-top img')->attr('pagespeed_lazy_src');
+		$img = pq('#bg-top img')->attr('pagespeed_lazy_src');
+		if(!$img){
+			$img = pq('#bg-top img')->attr('src');
+		}
+		return $img;
 	}
 
 	function __get_track_from_a_tag($track, $featured_art = false)

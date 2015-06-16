@@ -17,4 +17,10 @@ class Artist extends Model {
 			return $res['Artist'];
 		return false;
 	}
+
+	function is_exist($link)
+	{
+		//SELECT * FROM test WHERE texte LIKE '%something%' LIMIT 1
+		return $this->find('all', array('fields' => array('*') ,'conditions' => array('link' => $link), 'limit' => 1));
+	}
 }

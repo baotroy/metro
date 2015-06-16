@@ -9,27 +9,38 @@ class IndexController extends AppController {
 		set_time_limit(0);
 	}
 	function index(){
-
-		$saved = $this->get_artists();
-		echo '<meta charset="utf-8">';
-		echo '<pre>';print_r($saved); exit;
-		// $arts[13198] = 'evanescence';
-		// $this->get_album_tracks_lyrics($arts);
-		exit;
+		$metro = new Metro;
+		$r =$metro->get_artist_banner('maroon-5');
+		echo $r;
 	}
 
 	/*
 		http://www.metrolyrics.com/a1-albums-list.html
 		ML.artistname.MS.
 	*/
-	function get_album_tracks_lyrics($list_arts = array()){
+	function get_banner($url)//url artist album list
+	{
+		$metro = new Metro;
+		$html  = $metro->getPage($url);
 
-		// $arts = $this->Artist->getAll('list', array('id', 'link'), 1);
+	}
+
+	function get_cover($files = array()){
+		$ignore = array('nopic.jpg', 'no-album.jpg');
+		foreach ($files as $key => $file) {
+			
+			if(!in_array($file, $ignore)){
+				$source = 'http://netstorage.metrolyrics.com/albums/'.$file;
+				@copy($source, DL_PATH.$file);
+			}
+		}
+	}
+	function get_album_tracks_lyrics($list_arts = array()){
 		$metro = new Metro;
 		
 		foreach ($list_arts as $art_id => $value) {
 			$current_page = 0;
-			$html;
+			$html = '';
 			do{
 				$current_page++;
 				$url = ML.$value.MS.ALBUM.MS.'list'.MS.$current_page.DOT.PAGE_SUFFIX;
@@ -37,6 +48,7 @@ class IndexController extends AppController {
 				$pagers = $metro->get_pager($html);
 				$data[$art_id][] = $metro->get_albums_and_tracks($html);
 			}while($this->Common->is_next_page($pagers, $current_page));
+
 			$feated_tracks[$art_id] = $metro->get_featured_tracks($html);
 		}
 		$saved_albums = 0;
@@ -77,7 +89,13 @@ class IndexController extends AppController {
 			foreach ($tracks as $track_key => $track) {
 				$master_artist = $this->Artist->get_artist_from_name($track['master_artist'], array('id'));
 
-				$feated_tracks[$art_id][$track_key]['artist'] = $master_artist['id'];
+				//kiem tra neu ca si chinh cua bai hat ton tai thi cap nhat vao field artist, neu khong thi ghi ten day du ca si vao featured_name
+				if($master_artist){
+					$feated_tracks[$art_id][$track_key]['artist'] = $master_artist['id'];
+				}
+				else{
+					$feated_tracks[$art_id][$track_key]['master_featured'] = $track['master_artist'];
+				}
 				$feated_tracks[$art_id][$track_key]['featured'] = $art_id;
 				
 				$lyrics = $metro->get_lyrics($track['link']);

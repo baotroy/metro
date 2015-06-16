@@ -177,6 +177,7 @@ class Metro{
 
 	function get_lyrics($url){
 		$page = $this->getPage($url);
+		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
 		$data = array();
 		//preg_match_all("/<div id=\"lyrics-body-text\">([^`]*?)<\/div>/", $page, $out);
 
@@ -271,6 +272,16 @@ class Metro{
 
 		}
 		return $featured_tracks;
+	}
+
+	function get_artist_banner($link){
+		$url = ML.$link.MS.LYRICS.DOT.PAGE_SUFFIX;
+		$page = $this->getPage($url);
+		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
+
+		$doc = phpQuery::newDocument($page);
+
+		return pq('#bg-top img')->attr('pagespeed_lazy_src');
 	}
 
 	function __get_track_from_a_tag($track, $featured_art = false)

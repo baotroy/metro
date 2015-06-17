@@ -9,7 +9,9 @@ class IndexController extends AppController {
 		set_time_limit(0);
 	}
 	function index(){
-		$count = $this->update_artists();
+		$arts = $this->Artist->getAll('list', array('id', 'link'), -1, 5117);
+
+		$count = $this->get_banner($arts);
 		echo $count;
 	}
 
@@ -17,24 +19,30 @@ class IndexController extends AppController {
 		http://www.metrolyrics.com/a1-albums-list.html
 		ML.artistname.MS.
 	*/
-
-	function get_banner($link)
+	function agetlyrics(){
+		$arts = $this->Artist->getAll('list', array('id', 'link'), 1000);
+	
+		$count = $this->get_album_tracks_lyrics($arts);
+		print_r($count);
+	}
+	function get_banner($artist_list = array())
 	{
 		$ignore = array('1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '7.jpg', '8.jpg', '6.jpg', '9.jpg', '10.jpg');
 		$count = 0;
-		$metro = new Metro;
-		//foreach ($artist_list as $art_id => $link) {
+		
+		foreach ($artist_list as $art_id => $link) {
+			$metro = new Metro;
 			$link_ref = $metro->get_artist_banner($link);
 			$img = $this->Common->get_image_file_name($link_ref);
 			if(!in_array($img, $ignore)){
 				if(@copy($link_ref, DL_PATH.DIR_PROFILE.$img)){
 					$this->Artist->save(array('id' => $art_id, 'cover' => $img));
-					return true;
+					$count++;
 				}
 			}
 			
-	//	}
-		return false;;
+		}
+		return $count;
 	}
 
 	function get_cover($files = array()){

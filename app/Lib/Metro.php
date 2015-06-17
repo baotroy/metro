@@ -3,7 +3,18 @@ require_once('phpQuery.php');
 class Metro{
 
 	function getPage($url){
-		return file_get_contents($url);
+		$markup = '';
+		do{
+			if(connection_status() == CONNECTION_NORMAL){
+				$markup = @file_get_contents($url);
+			}
+			else
+			{
+				sleep(5);
+			}
+		}while(!$markup);
+
+		return $markup;
 	}
 
 	function getElement($input, $tag, $class= ''){
@@ -120,52 +131,6 @@ class Metro{
 		return $data;
 	}
 
-	//lay danh sach album va track list trong album
-	// function get_albums_and_tracks($page){
-	// 	$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
-	// 	$xml = new DOMDocument();
-	//     @$xml->loadHTML($page); // path of your XML file ,make sure path is correct
-	//     $xpd = new DOMXPath($xml);
-	//     false&&$result_data = new DOMElement(); //this is for my IDE to have intellysense
-	//     $res = $xpd->query("//div[@class='switchable albums clearfix']/*");  // change the table naem here
-	    
-	//     $albums = array();
-	//     $tracklists = array();
-	//     $featured = false;
-	//     foreach($res as $key => $result){
-	//     	$tracklist = array();    
-	//         $album = $result->getElementsByTagName('h3');//get albums
-	//         $songs = $result->getElementsByTagName('li');
-	//         $links = $result->getElementsByTagName('a');
-
-	//         foreach ($album  as $ab) {
-	//         	if(strtolower($ab->nodeValue) == strtolower('Songs Featured In')){
-	//         		$featured = true;
-	//         		continue;
-	//         	}
-	// 	    	$albums[] = $ab->nodeValue;	
-	// 	    }
-		    
-	//         foreach ($songs as $k => $song) {
-	//         	$link = $links[$k+1]->getAttribute('href');
-	//         	$tracklist[] = array('link' => $this->shortenLyricsUrl($link), 'name' => trim($song->nodeValue), 'link_ref'=>$link);
-	//         }
-	//         //if($tracklist)
-	//        	$tracklists[]=$tracklist;
-	        
-	        
-	//     }
-	//     if(count($albums) > count($tracklists)){
-	//     	end($albums);
-	//     	unset($albums[key($albums)]);
-	//     }
-	//     else if(count($albums) < count($tracklists)){
-	//     	end($tracklists);
-	//     	unset($tracklists[key($tracklists)]);
-	//     }
-	//     return array('albums' => $albums, 'tracklists'=> $tracklists);
-	// }
-
 	//lay so page
 	function get_pager($page){
 		preg_match_all ("/<span class=\"pages\">([^`]*?)<\/span>/", $page, $out);
@@ -179,7 +144,6 @@ class Metro{
 		$page = $this->getPage($url);
 		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
 		$data = array();
-		//preg_match_all("/<div id=\"lyrics-body-text\">([^`]*?)<\/div>/", $page, $out);
 
 		$doc = phpQuery::newDocument($page);
 		$lyrics = trim(pq('div#lyrics-body-text')->html());
@@ -191,8 +155,7 @@ class Metro{
 		{
 			if($lyrics == '<p class="verse"></p>') $lyrics = NULL;
 			$data['lyrics'] = $lyrics;
-			//preg_match_all("/<p class=\"writers\">([^`]*?)<\/p>/", $page, $meta);
-			
+
 			if(isset($meta[1])){
 				$data['writer'] = strip_tags(str_replace(WRITER,'',$meta[1]));
 			}
@@ -210,23 +173,13 @@ class Metro{
 		}
 		return FALSE;
 	}
+
 	function shortenAlbumUrl($url){
 		if(!$url) return false;
 		$url = substr($url, strlen(ML));
 		$url = substr($url, 0, strlen($url)-strlen(MS.LYRICS.DOT.PAGE_SUFFIX));
 		return $url;
 	}
-
-	// function get_featured_list($artist_link){
-	// 	$url = ML.$artist_link.MS.FEAT.DOT.PAGE_SUFFIX;
-	// 	$html = $this->getPage($url);
-	// 	$doc = phpQuery::newDocument($html);
-	// 	$tracks = array();
-	// 	foreach (pq('table.songs-table a') as $a) {
-	// 		$href = pq($a)->attr('href').'<br>';
-	// 		$name = 
-	// 	}exit;
-	// }
 
 	function get_albums_and_tracks($page){
 		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
@@ -285,6 +238,7 @@ class Metro{
 		if(!$img){
 			$img = pq('#bg-top img')->attr('src');
 		}
+		unset($doc);
 		return $img;
 	}
 

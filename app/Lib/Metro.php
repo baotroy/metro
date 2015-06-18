@@ -3,10 +3,15 @@ require_once('phpQuery.php');
 class Metro{
 
 	function getPage($url){
-		$markup = '';
+		
 		do{
+			$markup = '';
 			if(connection_status() == CONNECTION_NORMAL){
 				$markup = @file_get_contents($url);
+				//$pos = strpos($markup, '<body');
+				$markup = substr($markup, strpos($markup, '<body'));
+				// echo '<meta charset="utf-8">';
+				// echo '<pre>';print_r($markup); exit;
 			}
 			else
 			{
@@ -142,33 +147,54 @@ class Metro{
 
 	function get_lyrics($url){
 		$page = $this->getPage($url);
-		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
-		$data = array();
+		$html = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
+		// $data = array();
 
-		$doc = phpQuery::newDocument($page);
-		$lyrics = trim(pq('div#lyrics-body-text')->html());
-		$meta =trim(pq('p.writers')->html());
-		if($meta){
-			$meta = explode('<strong>', $meta);
+		// $doc = phpQuery::newDocument($page);
+		// $lyrics = trim(pq('div#lyrics-body-text')->html());
+				
+		$value=preg_match_all('/<div id=\"lyrics-body-text\">(.*?)<\/div>/s',$html,$content);
+		$value=preg_match_all('/<p class=\"writers\">(.*?)<\/p>/s',$html, $meta);
+
+		$lyrics = '';
+		if(@$content[1][0])
+		{
+			$lyrics = $content[1][0];
 		}
+	
+		// $meta =trim(pq('p.writers')->html());
+		// if($meta){
+		// 	$meta = explode('<strong>', $meta);
+		// }
 		if(@$lyrics)
 		{
 			if($lyrics == '<p class="verse"></p>') $lyrics = NULL;
 			$data['lyrics'] = $lyrics;
-
+			$data['writer'] = '';
+			$data['publisher'] = '';
 			if(isset($meta[1])){
-				$data['writer'] = strip_tags(str_replace(WRITER,'',$meta[1]));
+				foreach ($meta[1] as $key => $value) {
+					if(strpos($value, 'Songwriters')){
+						$data['writer'] = strip_tags(str_replace(WRITER,'',$value));
+					}
+					if(strpos($value, 'Published by')){
+						$data['publisher'] = trim(substr(strip_tags(str_replace(PUBLISHER,'',$value)), strlen(LYRICS)+1));
+					}
+				}
 			}
-			else{
-				$data['writer'] = '';
-			}
-			if(isset($meta[2])){
-				$data['publisher'] = trim(substr(strip_tags(str_replace(PUBLISHER,'',$meta[2])), strlen(LYRICS)+1));
-			}
-			else
-			{
-				$data['publisher'] ='';
-			}
+			// if(isset($meta[1])){
+			// 	$data['writer'] = strip_tags(str_replace(WRITER,'',$meta[1]));
+			// }
+			// else{
+			// 	$data['writer'] = '';
+			// }
+			// if(isset($meta[2])){
+			// 	$data['publisher'] = trim(substr(strip_tags(str_replace(PUBLISHER,'',$meta[2])), strlen(LYRICS)+1));
+			// }
+			// else
+			// {
+			// 	$data['publisher'] ='';
+			// }
 			return $data;
 		}
 		return FALSE;

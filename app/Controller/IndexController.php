@@ -9,21 +9,42 @@ class IndexController extends AppController {
 		set_time_limit(0);
 	}
 	function index(){
-		$arts = $this->Artist->getAll('list', array('id', 'link'), -1, 5117);
+		// $arts = $this->Artist->getAll('list', array('id', 'link'), 31, 68);
 
-		$count = $this->get_banner($arts);
-		echo $count;
+		// //$count = $this->get_banner($arts);
+		
+		// $count = $this->get_album_tracks_lyrics($art);
+		// print_r($count);
+		$metro = new Metro;
+		$page = $metro->getPage('http://www.metrolyrics.com/heart-for-rent-lyrics-ace-wilder.html');
+		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
+		$data = array();
+
+		$doc = phpQuery::newDocument($page);
+		$lyrics = '';
+		try{
+			$lyrics = trim(pq('#lyrics-body-text')->html());
+		}
+		catch(Exception $e){
+			echo 'error '.$url."<br>".$e->getMessage(); exit;
+		}
+		echo '<meta charset="utf-8">';
+		echo '<pre>';print_r($lyrics); exit;
 	}
 
 	/*
 		http://www.metrolyrics.com/a1-albums-list.html
 		ML.artistname.MS.
 	*/
+
+
+
 	function agetlyrics(){
-		$arts = $this->Artist->getAll('list', array('id', 'link'), 1000);
+		$arts = $this->Artist->getAll('list', array('id', 'link'), 500, 3000);//tu 3001-3500
 	
 		$count = $this->get_album_tracks_lyrics($arts);
 		print_r($count);
+		exit;
 	}
 	function get_banner($artist_list = array())
 	{
@@ -57,8 +78,10 @@ class IndexController extends AppController {
 	}
 	function get_album_tracks_lyrics($list_arts = array()){
 		$metro = new Metro;
-		
+		$saved_albums = 0;
+		$saved_tracks = 0;
 		foreach ($list_arts as $art_id => $value) {
+			$data = array();
 			$current_page = 0;
 			$html = '';
 			do{
@@ -70,62 +93,66 @@ class IndexController extends AppController {
 			}while($this->Common->is_next_page($pagers, $current_page));
 
 			$feated_tracks[$art_id] = $metro->get_featured_tracks($html);
-		}
-		$saved_albums = 0;
-		$saved_tracks = 0;
-		foreach ($data as $art_id => $artist) {
-			foreach ($artist as $page_key => $page) {
-				$albums = $page['albums'];
-				$tracks = $page['tracklists'];
-				foreach ($albums as $album_key => $album) {
+			//save for album tracks
+			foreach ($data as $art_id => $artist) {
+				foreach ($artist as $page_key => $page) {
+					$albums = $page['albums'];
+					$tracks = $page['tracklists'];
+					foreach ($albums as $album_key => $album) {
 
-					$image_name = $this->Common->get_image_file_name($album['image']);
+						$image_name = $this->Common->get_image_file_name($album['image']);
 
-					if($this->Album->saveAll(array('name' => $album['name'], 'num_of_tracks' => $album['num_of_tracks'],
-												'artist' => $art_id, 'year' => $album['year'], 'genre' => $album['genre'], 'image' => $image_name))){
-						$album_id = $this->Album->id;
-						$saved_albums++;
-						if(@$tracks[$album_key]){
-							foreach ($tracks[$album_key] as $track_key => $track) {
-								$saved_tracks++;
+						if($this->Album->saveAll(array('name' => $album['name'], 'num_of_tracks' => $album['num_of_tracks'],
+													'artist' => $art_id, 'year' => $album['year'], 'genre' => $album['genre'], 'image' => $image_name))){
+							$album_id = $this->Album->id;
+							$saved_albums++;
+							if(@$tracks[$album_key]){
+								foreach ($tracks[$album_key] as $track_key => $track) {
+									$saved_tracks++;
 
-								$tracks[$album_key][$track_key]['album'] = $album_id;
-								$tracks[$album_key][$track_key]['artist'] = $art_id;
-								$lyrics = $metro->get_lyrics($track['link']);
-								
-								$tracks[$album_key][$track_key]['link'] = $this->Common->shortenLyricsUrl($track['link']);
-								$tracks[$album_key][$track_key]['content'] = $lyrics['lyrics'];
-								$tracks[$album_key][$track_key]['writer'] = $lyrics['writer'];
-								$tracks[$album_key][$track_key]['publisher'] = $lyrics['publisher'];
+									$tracks[$album_key][$track_key]['album'] = $album_id;
+									$tracks[$album_key][$track_key]['artist'] = $art_id;
+									$lyrics = $metro->get_lyrics($track['link']);
+									
+									$tracks[$album_key][$track_key]['link'] = $this->Common->shortenLyricsUrl($track['link']);
+									$tracks[$album_key][$track_key]['content'] = $lyrics['lyrics'];
+									$tracks[$album_key][$track_key]['writer'] = $lyrics['writer'];
+									$tracks[$album_key][$track_key]['publisher'] = $lyrics['publisher'];
+								}
+								$this->Lyrics->saveAll($tracks[$album_key]);
 							}
-							$this->Lyrics->saveAll($tracks[$album_key]);
 						}
 					}
 				}
 			}
-		}
-		//save featured tracks
-		foreach ($feated_tracks as $art_id => $tracks) {
-			foreach ($tracks as $track_key => $track) {
-				$master_artist = $this->Artist->get_artist_from_name($track['master_artist'], array('id'));
+			unset($data);
+			//save featured tracks
+			foreach ($feated_tracks as $art_id => $tracks) {
+				foreach ($tracks as $track_key => $track) {
+					$master_artist = $this->Artist->get_artist_from_name($track['master_artist'], array('id'));
 
-				//kiem tra neu ca si chinh cua bai hat ton tai thi cap nhat vao field artist, neu khong thi ghi ten day du ca si vao featured_name
-				if($master_artist){
-					$feated_tracks[$art_id][$track_key]['artist'] = $master_artist['id'];
+					//kiem tra neu ca si chinh cua bai hat ton tai thi cap nhat vao field artist, neu khong thi ghi ten day du ca si vao featured_name
+					if($master_artist){
+						$feated_tracks[$art_id][$track_key]['artist'] = $master_artist['id'];
+					}
+					else{
+						$feated_tracks[$art_id][$track_key]['master_featured'] = $track['master_artist'];
+					}
+					$feated_tracks[$art_id][$track_key]['featured'] = $art_id;
+					
+					$lyrics = $metro->get_lyrics($track['link']);
+					$feated_tracks[$art_id][$track_key]['link'] = $this->Common->shortenLyricsUrl($track['link']);
+					$feated_tracks[$art_id][$track_key]['content'] = $lyrics['lyrics'];
+					$feated_tracks[$art_id][$track_key]['writer'] = $lyrics['writer'];
+					$feated_tracks[$art_id][$track_key]['publisher'] = $lyrics['publisher'];
+					$saved_tracks++;
 				}
-				else{
-					$feated_tracks[$art_id][$track_key]['master_featured'] = $track['master_artist'];
-				}
-				$feated_tracks[$art_id][$track_key]['featured'] = $art_id;
-				
-				$lyrics = $metro->get_lyrics($track['link']);
-				$feated_tracks[$art_id][$track_key]['link'] = $this->Common->shortenLyricsUrl($track['link']);
-				$feated_tracks[$art_id][$track_key]['content'] = $lyrics['lyrics'];
-				$feated_tracks[$art_id][$track_key]['writer'] = $lyrics['writer'];
-				$feated_tracks[$art_id][$track_key]['publisher'] = $lyrics['publisher'];
-				$saved_tracks++;
-			}$this->Featured->saveAll($feated_tracks[$art_id]);
+				$this->Featured->saveAll($feated_tracks[$art_id]);
+			}
+			unset($feated_tracks);
 		}
+		
+		
 		return array('saved_tracks' => $saved_tracks, 'saved_albums' => $saved_albums);
 	}
 	
@@ -192,6 +219,25 @@ class IndexController extends AppController {
 			$arts = array_merge($arts, $db);
 		}
 		return $arts;
+	}
+
+	function update_lyrics_empty(){
+		
+		$tracks = $this->Lyrics->find('list', array('fields' => array('id', 'link'), 'conditions' => array('content IS NULL', 'id >=' => 6525)));
+		$count = 0;
+		foreach ($tracks as $track_key => $track) {
+			$metro = new Metro;
+			$url = ML.$track.DOT.PAGE_SUFFIX;
+			$lyrics = $metro->get_lyrics($url);
+			if($lyrics) $count++;
+			$data['id'] = $track_key;
+			$data['content'] = $lyrics['lyrics'];
+			$data['writer'] = $lyrics['writer'];
+			$data['publisher'] = $lyrics['publisher'];
+			$this->Lyrics->save($data);
+		}
+		echo '<meta charset="utf-8">';
+		echo '<pre>';print_r($count); exit;
 	}
 
 }

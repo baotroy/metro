@@ -168,7 +168,7 @@ class Metro{
 		// }
 		if(@$lyrics)
 		{
-			if($lyrics == '<p class="verse"></p>') $lyrics = NULL;
+			if(strip_tags($lyrics) == '') $lyrics = NULL;
 			$data['lyrics'] = $lyrics;
 			$data['writer'] = '';
 			$data['publisher'] = '';

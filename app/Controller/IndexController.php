@@ -9,40 +9,39 @@ class IndexController extends AppController {
 		set_time_limit(0);
 	}
 	function index(){
-		// $arts = $this->Artist->getAll('list', array('id', 'link'), 31, 68);
-
-		// //$count = $this->get_banner($arts);
-		
-		// $count = $this->get_album_tracks_lyrics($art);
-		// print_r($count);
-		$metro = new Metro;
-		$page = $metro->getPage('http://www.metrolyrics.com/heart-for-rent-lyrics-ace-wilder.html');
-		$page = mb_convert_encoding($page , 'HTML-ENTITIES', 'UTF-8'); 
-		$data = array();
-
-		$doc = phpQuery::newDocument($page);
-		$lyrics = '';
-		try{
-			$lyrics = trim(pq('#lyrics-body-text')->html());
-		}
-		catch(Exception $e){
-			echo 'error '.$url."<br>".$e->getMessage(); exit;
-		}
-		echo '<meta charset="utf-8">';
-		echo '<pre>';print_r($lyrics); exit;
+	 exit;
 	}
 
 	/*
 		http://www.metrolyrics.com/a1-albums-list.html
 		ML.artistname.MS.
+
+		!! CHECK SINGLE. NEU BAI HAT TRONG ALBUM LA SINGLE THI CHECK SINGLE VA XOA LINK SINGLE. 2 BAI CO CUNG LINK.
 	*/
 
 
 
 	function agetlyrics(){
-		$arts = $this->Artist->getAll('list', array('id', 'link'), 500, 3000);//tu 3001-3500
+		$arts = $this->Artist->getAllFromTo('list', array('id', 'link'), 1001, 3000);//tu 3001-3500
+		$arts_name = $this->Artist->getAllFromTo('list', array('id', 'name'), 1001, 3000);//tu 3001-3500
 	
-		$count = $this->get_album_tracks_lyrics($arts);
+		$count = $this->get_album_tracks_lyrics($arts, $arts_name);
+		print_r($count);
+		exit;
+	}
+	function agetlyrics2(){//**
+		$arts = $this->Artist->getAllFromTo('list', array('id', 'link'), 500, 4500);//tu 3001-3500
+		$arts_name = $this->Artist->getAllFromTo('list', array('id', 'name'), 500, 4500);//tu 3001-3500
+		
+		//$count = $this->get_album_tracks_lyrics($arts, $arts_name);
+		print_r($count);
+		exit;
+	}
+	function agetlyrics3(){
+		$arts = $this->Artist->getAllFromTo('list', array('id', 'link'), 500, 5500);//tu 3001-3500
+		$arts_name = $this->Artist->getAllFromTo('list', array('id', 'name'), 500, 5500);//tu 3001-3500
+		
+		//$count = $this->get_album_tracks_lyrics($arts, $arts_name);
 		print_r($count);
 		exit;
 	}
@@ -76,7 +75,7 @@ class IndexController extends AppController {
 			}
 		}
 	}
-	function get_album_tracks_lyrics($list_arts = array()){
+	function get_album_tracks_lyrics($list_arts = array(), $arts_name = array()){
 		$metro = new Metro;
 		$saved_albums = 0;
 		$saved_tracks = 0;
@@ -101,8 +100,10 @@ class IndexController extends AppController {
 					foreach ($albums as $album_key => $album) {
 
 						$image_name = $this->Common->get_image_file_name($album['image']);
+						
+						$forein = $this->Common->clean($album['name']).'-'.$this->Common->clean($arts_name[$art_id]);
 
-						if($this->Album->saveAll(array('name' => $album['name'], 'num_of_tracks' => $album['num_of_tracks'],
+						if($this->Album->saveAll(array('name' => $album['name'], 'album_ref'=> $forein, 'num_of_tracks' => $album['num_of_tracks'],
 													'artist' => $art_id, 'year' => $album['year'], 'genre' => $album['genre'], 'image' => $image_name))){
 							$album_id = $this->Album->id;
 							$saved_albums++;
@@ -112,6 +113,7 @@ class IndexController extends AppController {
 
 									$tracks[$album_key][$track_key]['album'] = $album_id;
 									$tracks[$album_key][$track_key]['artist'] = $art_id;
+									$tracks[$album_key][$track_key]['album_ref'] = $forein;
 									$lyrics = $metro->get_lyrics($track['link']);
 									
 									$tracks[$album_key][$track_key]['link'] = $this->Common->shortenLyricsUrl($track['link']);
@@ -176,6 +178,8 @@ class IndexController extends AppController {
 					$this->Artist->create();
 					$this->Artist->save($art);
 					$this->get_banner($art['link']);
+					//lay album & lyrics cua art moi
+
 					$count++;	
 				}
 			}
@@ -238,6 +242,62 @@ class IndexController extends AppController {
 		}
 		echo '<meta charset="utf-8">';
 		echo '<pre>';print_r($count); exit;
+	}
+
+	function update_album_ref(){
+		$joins = array(
+			array(
+				'alias'=>'Artist',
+				'table' => 'artists',
+				'type' => 'LEFT',
+				'conditions' => array('Album.artist = Artist.id')
+			),
+			);
+
+		$albums = $this->Album->find('all', array('joins'=>$joins, 'fields' => array('Album.id', 'Album.name', 'Artist.name'), 'conditions'=> array('Album.album_ref' => NULL)));
+
+		//$lyrics = $this->Lyrics->find('list', array('fields'=> array('album', 'album_ref'), 'conditions' => array('album_ref'=>NULL)));
+		$count=0;
+		foreach ($albums as $album_key => $album) {
+			$ref = $this->Common->clean($album['Album']['name'].'-'.$this->Common->clean($album['Artist']['name']));
+			
+			$this->Lyrics->updateAll(array('album_ref' => @'"'. $ref .'"'), array('album'=>$album['Album']['id']));
+			$this->Album->updateAll(array('album_ref' => @'"'. $ref .'"'), array('id'=>$album['Album']['id']));
+			$count++;
+			
+		}
+		echo '<meta charset="utf-8">';
+		echo '<pre>';print_r($count); exit;
+	}
+
+	function op(){
+		$min = $this->Artist->query("select l.* FROM artists l INNER JOIN (
+					    SELECT min(id) AS ma, link FROM artists ar  GROUP BY link HAVING COUNT(*) >1 order by id
+					  ) r ON r.ma = l.id order by l.id");
+		$max = $this->Artist->query("select l.* FROM artists l INNER JOIN (
+					    SELECT max(id) AS ma, link FROM artists ar  GROUP BY link HAVING COUNT(*) >1 order by id
+					  ) r ON r.ma = l.id order by l.id");
+		$amin = array();
+		$amax = array();
+		foreach ($min as $key => $value) {
+			$amin[$value['l']['link']] = array('id' => $value['l']['id'], 'char'=>$value['l']['char']);
+		}
+
+		foreach ($max as $key => $value) {
+			$amax[$value['l']['link']] = array('id' => $value['l']['id'], 'char'=>$value['l']['char']);
+		}
+		$count =0;
+		foreach ($amin as $key => $value) {
+			$count++;
+			$newChar = $value['char'].','.$amax[$key]['char'] ;
+			$this->Artist->updateAll(array(@'char' => @'"'. $newChar .'"'), array('id' => $value['id']));
+		}
+
+		echo '<meta charset="utf-8">';
+		echo '<pre>';print_r($count); exit;
+
+		echo '<meta charset="utf-8">';
+		echo '<pre>';print_r($min); exit;
 	}
 
 }

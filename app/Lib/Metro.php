@@ -168,7 +168,7 @@ class Metro{
 		// }
 		if(@$lyrics)
 		{
-			if(strip_tags($lyrics) == '') $lyrics = NULL;
+			if(trim(strip_tags($lyrics)) == '') $lyrics = NULL;
 			$data['lyrics'] = $lyrics;
 			$data['writer'] = '';
 			$data['publisher'] = '';

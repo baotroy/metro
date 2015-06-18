@@ -10,6 +10,10 @@ class Artist extends Model {
 		return $this->find($type, array('fields' => $fields, 'limit' => $limit, 'offset' => $offset));
 	}
 
+	function getAllFromTo($type= 'all',$fields = array(), $from = 0, $to = 0){
+		return $this->find($type, array('fields' => $fields, 'conditions'=> array('id >=' => $from, 'id <=' =>$to)));
+	}
+
 	function get_artist_from_name($name, $fields = array())
 	{
 		$res = $this->find('first', array('fields' => $fields, 'conditions' => array('name'=> $name)));

@@ -17,6 +17,7 @@ class IndexController extends AppController {
 		ML.artistname.MS.
 
 		!! CHECK SINGLE. NEU BAI HAT TRONG ALBUM LA SINGLE THI CHECK SINGLE VA XOA LINK SINGLE. 2 BAI CO CUNG LINK.
+		!! remove tag nhung bai lyric rong <p.....
 	*/
 
 

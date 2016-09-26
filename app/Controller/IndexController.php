@@ -23,18 +23,18 @@ class IndexController extends AppController {
 
 
 	function agetlyrics(){
-		$arts = $this->Artist->getAllFromTo('list', array('id', 'link'), 1001, 3000);//tu 3001-3500
-		$arts_name = $this->Artist->getAllFromTo('list', array('id', 'name'), 1001, 3000);//tu 3001-3500
+		$arts = $this->Artist->getAllFromTo('list', array('id', 'link'), 7076, 8000);//tu 3001-3500
+		$arts_name = $this->Artist->getAllFromTo('list', array('id', 'name'), 7076, 8000);//tu 3001-3500
 	
 		$count = $this->get_album_tracks_lyrics($arts, $arts_name);
 		print_r($count);
 		exit;
 	}
 	function agetlyrics2(){//**
-		$arts = $this->Artist->getAllFromTo('list', array('id', 'link'), 500, 4500);//tu 3001-3500
-		$arts_name = $this->Artist->getAllFromTo('list', array('id', 'name'), 500, 4500);//tu 3001-3500
+		$arts = $this->Artist->getAllFromTo('list', array('id', 'link'), 8001, 9000);//tu 3001-3500
+		$arts_name = $this->Artist->getAllFromTo('list', array('id', 'name'), 8001, 9000);//tu 3001-3500
 		
-		//$count = $this->get_album_tracks_lyrics($arts, $arts_name);
+		$count = $this->get_album_tracks_lyrics($arts, $arts_name);
 		print_r($count);
 		exit;
 	}

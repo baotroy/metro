@@ -859,3 +859,56 @@ Stack Trace:
 #6 E:\ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
 #7 E:\ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
+2015-06-17 09:54:40 Error: Fatal Error (4): syntax error, unexpected '}' in [E:\php-ws\metro\app\Lib\Metro.php, line 15]
+2015-06-17 09:54:40 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /metro/
+Stack Trace:
+#0 E:\php-ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\php-ws\\metro...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\php-ws\\metro...', 15, Array)
+#2 E:\php-ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\php-ws\\metro...', 15, Array)
+#3 E:\php-ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-17 11:02:34 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [E:\php-ws\metro\app\Controller\IndexController.php, line 14]
+2015-06-17 11:02:34 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /metro/
+Stack Trace:
+#0 E:\php-ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\php-ws\\metro...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\php-ws\\metro...', 14, Array)
+#2 E:\php-ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\php-ws\\metro...', 14, Array)
+#3 E:\php-ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-17 12:20:30 Error: Fatal Error (1): Out of memory (allocated 31195136) (tried to allocate 1048576 bytes) in [E:\php-ws\metro\app\Lib\phpQuery.php, line 1764]
+2015-06-17 12:20:30 Error: [FatalErrorException] Out of memory (allocated 31195136) (tried to allocate 1048576 bytes)
+Request URL: /metro/
+Stack Trace:
+#0 E:\php-ws\metro\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Out of memory (...', 'E:\\php-ws\\metro...', 1764)
+#1 [internal function]: ErrorHandler::handleError(1, 'Out of memory (...', 'E:\\php-ws\\metro...', 1764, Array)
+#2 E:\php-ws\metro\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Out of memory (...', 'E:\\php-ws\\metro...', 1764, Array)
+#3 E:\php-ws\metro\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-18 10:33:31 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /metro/img/spindicate.gif
+Stack Trace:
+#0 E:\php-ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-18 18:01:23 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /metro/index/agetlyrics
+Stack Trace:
+#0 E:\php-ws\metro\lib\Cake\Model\Datasource\DboSource.php(2294): PDO->beginTransaction()
+#1 E:\php-ws\metro\lib\Cake\Model\Model.php(2326): DboSource->begin()
+#2 E:\php-ws\metro\lib\Cake\Model\Model.php(2266): Model->saveMany(Array, Array)
+#3 E:\php-ws\metro\app\Controller\IndexController.php(122): Model->saveAll(Array)
+#4 E:\php-ws\metro\app\Controller\IndexController.php(45): IndexController->get_album_tracks_lyrics(Array)
+#5 [internal function]: IndexController->agetlyrics()
+#6 E:\php-ws\metro\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(IndexController), Array)
+#7 E:\php-ws\metro\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#8 E:\php-ws\metro\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest))
+#9 E:\php-ws\metro\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}

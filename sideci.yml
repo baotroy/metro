@@ -5,4 +5,4 @@ linter:
       dir: app/
   phpmd:
     options:
-      rule: codesize,naming,cleancode,unusedcode
+      rule: codesize

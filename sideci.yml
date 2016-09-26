@@ -2,7 +2,7 @@ linter:
   code_sniffer:
     options:
       standard: CakePHP
-      dir: app/
+      dir: app/Controller/
   phpmd:
     options:
       rule: codesize

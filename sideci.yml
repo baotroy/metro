@@ -1,7 +1,7 @@
 linter:
   code_sniffer:
     options:
-      standard: ruleset.xml
+      standard: CakePHP
       dir: app/Controller/*.php
   phpmd:
     options:

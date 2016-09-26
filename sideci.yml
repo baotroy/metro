@@ -1,0 +1,8 @@
+linter:
+  code_sniffer:
+    options:
+      standard: CakePHP
+      dir: app/
+  phpmd:
+    options:
+      rule: codesize,naming,cleancode,unusedcode

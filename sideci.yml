@@ -2,7 +2,7 @@ linter:
   code_sniffer:
     options:
       standard: ruleset.xml
-      dir: app/Controller/
+      dir: app/Controller/*.php
   phpmd:
     options:
       rule: codesize
